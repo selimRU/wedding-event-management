@@ -1,0 +1,194 @@
+[
+    {
+        "id": 1,
+        "title": "Classic Wedding Package",
+        "description": "Our classic wedding package includes venue booking, decoration, catering, and photography services.",
+        "price": 5000,
+        "image": "https://i.ibb.co/xjR3WYy/New-Project-74.png",
+        "duration": "1 day",
+        "overview": "The Classic Wedding Package offers everything you need for a timeless and elegant wedding. Our team will take care of every detail, from selecting the perfect venue to capturing beautiful moments through photography.",
+        "features": [
+            "Venue Booking",
+            "Decoration",
+            "Catering",
+            "Photography",
+            "DJ Services"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Luxury Wedding Experience",
+        "description": "Experience a luxurious wedding with our premium package featuring a grand venue, gourmet catering, and personalized concierge services.",
+        "price": 15000,
+        "image": "https://i.ibb.co/KDkxBmC/New-Project-72.png",
+        "duration": "2 days",
+        "overview": "Indulge in a world of opulence with our Luxury Wedding Experience. From lavish venues to exquisite cuisine, our team will ensure that your wedding is a grand affair filled with luxury and sophistication.",
+        "features": [
+            "Premium Venue",
+            "Gourmet Catering",
+            "Concierge Services",
+            "Custom Wedding Cake",
+            "Live Entertainment"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Intimate Beach Wedding",
+        "description": "Celebrate your love with an intimate beach wedding, including a seaside ceremony, beachside dinner, and romantic sunset photoshoot.",
+        "price": 7500,
+        "image": "https://i.ibb.co/C82ZRmj/New-Project-76.png",
+        "duration": "1 day",
+        "overview": "Escape to a tranquil paradise with our Intimate Beach Wedding package. Exchange vows by the sea, dine under the stars, and cherish the beauty of your special day with a romantic photoshoot.",
+        "features": [
+            "Beachside Ceremony",
+            "Romantic Photoshoot",
+            "Beachside Dinner",
+            "Wedding Officiant",
+            "Flower Arrangements"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Vintage Wedding Charm",
+        "description": "Capture the essence of vintage charm with our package, featuring rustic decor, antique props, and a live jazz band.",
+        "price": 6000,
+        "image": "https://i.ibb.co/D9YPB8H/New-Project-73.png",
+        "duration": "1 day",
+        "overview": "Step back in time with our Vintage Wedding Charm package. Let the ambiance of rustic decor, live jazz music, and antique props transport you to a bygone era on your special day.",
+        "features": [
+            "Rustic Decor",
+            "Antique Props",
+            "Live Jazz Band",
+            "Vintage Photo Booth",
+            "Vintage Car Rental"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Destination Elopement",
+        "description": "Escape to a picturesque destination for an intimate elopement with a dedicated photographer and private ceremony.",
+        "price": 4000,
+        "image": "https://i.ibb.co/980SB1N/New-Project-80.png",
+        "duration": "1 day",
+        "overview": "Simplify your wedding with our Destination Elopement package. Exchange vows in a romantic destination of your choice, with a dedicated photographer capturing the essence of your love.",
+        "features": [
+            "Private Ceremony",
+            "Dedicated Photographer",
+            "Destination Coordination",
+            "Bouquet and Boutonniere",
+            "Elopement Certificate"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Themed Fairytale Wedding",
+        "description": "Create a fairytale wedding with our themed package, including costume rentals, fantasy decor, and a fairytale horse-drawn carriage.",
+        "price": 8000,
+        "image": "https://i.ibb.co/vDHW6BF/New-Project-78.png",
+        "duration": "1 day",
+        "overview": "Turn your wedding into a magical storybook with our Themed Fairytale Wedding package. Walk down the aisle in fantasy attire, with a horse-drawn carriage adding a touch of enchantment.",
+        "features": [
+            "Costume Rentals",
+            "Fantasy Decor",
+            "Horse-Drawn Carriage",
+            "Enchanted Forest Venue",
+            "Magical Entertainment"
+        ]
+    },
+    {
+        "id": 7,
+        "title": "Traditional Bangladeshi Wedding",
+        "description": "Experience the rich traditions of an Indian wedding with our package, including henna artists, traditional cuisine, and cultural performances.",
+        "price": 9000,
+        "image": "https://i.ibb.co/bPfWzk2/New-Project-75.png",
+        "duration": "2 days",
+        "overview": "Celebrate love and tradition with our Traditional Indian Wedding package. Immerse yourself in the vibrant colors, flavors, and rituals of an authentic Indian wedding experience.",
+        "features": [
+            "Henna Artists",
+            "Traditional Cuisine",
+            "Cultural Performances",
+            "Mehndi Ceremony",
+            "Sangeet Night"
+        ]
+    },
+    {
+        "id": 8,
+        "title": "Rustic Barn Wedding",
+        "description": "Celebrate your love in a rustic barn setting with wooden decor, country-style catering, and a barn dance party.",
+        "price": 5500,
+        "image": "https://i.ibb.co/mqvMGHm/New-Project-82.png",
+        "duration": "1 day",
+        "overview": "Embrace the charm of a Rustic Barn Wedding. Dance the night away in a picturesque barn setting, with country-style catering and delightful hayrides adding to the festivities.",
+        "features": [
+            "Barn Venue",
+            "Country-Style Catering",
+            "Barn Dance Party",
+            "Vintage Photo Booth",
+            "Hayrides"
+        ]
+    },
+    {
+        "id": 9,
+        "title": "Garden Elegance Wedding",
+        "description": "Embrace the beauty of nature with a garden wedding featuring lush floral arrangements, outdoor dining, and a live string quartet.",
+        "price": 7000,
+        "image": "https://i.ibb.co/D5R1rhV/New-Project-77.png",
+        "duration": "1 day",
+        "overview": "Experience the Garden Elegance Wedding, surrounded by the beauty of nature. Revel in lush floral arrangements, the sweet sounds of a string quartet, and outdoor dining in a charming garden setting.",
+        "features": [
+            "Outdoor Venue",
+            "Floral Arrangements",
+            "Live String Quartet",
+            "Outdoor Dining",
+            "Garden Party Games"
+        ]
+    },
+    {
+        "id": 10,
+        "title": "Bohemian Dream Wedding",
+        "description": "Celebrate your love in a bohemian style with our package featuring dreamcatcher decor, a drum circle, and a fire dancing performance.",
+        "price": 6500,
+        "image": "https://i.ibb.co/TMsjNy6/New-Project-81.png",
+        "duration": "1 day",
+        "overview": "Let your love take center stage with our Bohemian Dream Wedding. Immerse yourself in a world of dreamcatcher decor, rhythmic drum circles, and mesmerizing fire dancing.",
+        "features": [
+            "Dreamcatcher Decor",
+            "Drum Circle",
+            "Fire Dancing Performance",
+            "Bohemian Cuisine",
+            "Tarot Card Readings"
+        ]
+    },
+    {
+        "id": 11,
+        "title": "City Chic Wedding",
+        "description": "Experience an elegant city wedding with a rooftop ceremony, gourmet urban cuisine, and a live jazz quartet.",
+        "price": 7500,
+        "image": "https://i.ibb.co/W5HBJXL/New-Project-83.png",
+        "duration": "1 day",
+        "overview": "Elevate your love story with a City Chic Wedding. Exchange vows against a breathtaking city skyline, savor gourmet urban cuisine, and dance the night away to live jazz melodies.",
+        "features": [
+            "Rooftop Ceremony",
+            "Urban Cuisine",
+            "Live Jazz Quartet",
+            "City Skyline Views",
+            "Luxury Transportation"
+        ]
+    },
+    {
+        "id": 12,
+        "title": "Winter Wonderland Wedding",
+        "description": "Create a magical winter wedding with snowflake decor, a cozy fireside reception, and a horse-drawn sleigh ride.",
+        "price": 8500,
+        "image": "https://i.ibb.co/MDCgdNr/New-Project-79.png",
+        "duration": "1 day",
+        "overview": "Embrace the enchantment of winter with our Winter Wonderland Wedding. Let snowflake decor, cozy fireside moments, and a horse-drawn sleigh ride create memories that will last a lifetime.",
+        "features": [
+            "Snowflake Decor",
+            "Fireside Reception",
+            "Horse-Drawn Sleigh Ride",
+            "Hot Chocolate Bar",
+            "Ice Sculptures"
+        ]
+    }
+]
