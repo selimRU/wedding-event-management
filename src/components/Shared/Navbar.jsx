@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../assets/logo.png'
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const links = <div className=" flex flex-col lg:flex-row gap-4 text-xl ">
         <li><NavLink
             to='/'
@@ -14,7 +17,7 @@ const Navbar = () => {
             to='about'
             className={({ isActive }) =>
                 isActive ? " underline" : "hover:text-yellow-400"
-            } 
+            }
         >About
         </NavLink></li>
         <li><NavLink
@@ -42,10 +45,9 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-32">
                             {links}
-                            <button className=" bg-yellow-400 lg:px-8 py-2 rounded-2xl ">Sign Out</button>
                         </ul>
                     </div>
-                    <div className=" ml-[220px] md:ml-[610px] lg:ml-0 w-[100%] lg:w-[140%]">
+                    <div className=" ml-[90px] md:ml-[70%] lg:ml-0 w-[100%] lg:w-[140%]">
                         <div className="">
                             <img className="w-[100%] lg:w-[20%]" src={logo} alt="" />
                         </div>
@@ -59,9 +61,13 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end opacity-0 lg:opacity-100">
-                    <Link to='/login'><button className="hover:text-white bg-yellow-400 lg:px-8 py-2 rounded-2xl">Log In</button></Link>
-                    <button className=" hover:text-white bg-yellow-400 lg:px-8 py-2 rounded-2xl ">Sign Out</button>
+                <div className="navbar-end">
+                    {
+                        user ? <button onClick={logOut} className=" hover:text-white bg-yellow-400 px-5 lg:px-8 py-2 rounded-md lg:rounded-2xl ">Sign Out</button> :
+                            <Link to='/login'><button className="hover:text-white bg-yellow-400 px-5 lg:px-8 py-2 rounded-md lg:rounded-2xl">Log In</button></Link>
+                    }
+
+
                 </div>
             </div>
         </div>

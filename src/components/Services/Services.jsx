@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ServiceCard from './ServiceCard';
 import { AiOutlineGoogle } from 'react-icons/ai';
 import { BiLogoFacebook } from 'react-icons/bi';
 import { FaTwitter, FaInstagramSquare } from 'react-icons/fa';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 const Services = ({ services }) => {
+    const { googleLogin } = useContext(AuthContext)
 
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(res => {
+                const user = res.user
+                console.log(user);
+            })
+    }
     return (
         <div className=' grid lg:grid-cols-3 max-w-6xl mx-auto py-16'>
-            <div className=' col-span-2 grid lg:grid-cols-2 gap-5'>
+            <div className=' col-span-2 grid lg:grid-cols-2 gap-2 lg:gap-5'>
                 {
                     services.map(service => <ServiceCard key={service.id} service={service}></ServiceCard>)
                 }
             </div>
-            <div>
-                <h3 className=' text-2xl text-center font-semibold'>Login With</h3>
+            <div className=' hidden lg:block'>
+                <h3 className=' lg:text-2xl text-center font-semibold'>Login With</h3>
                 <div className=' flex justify-center py-5'>
-                    <button className=' btn btn-outline text-center hover:bg-yellow-400'><span className=' text-xl text-blue-400'><AiOutlineGoogle /></span> Join With Google</button>
+                    <button onClick={handleGoogleLogin} className=' btn btn-outline text-center hover:bg-yellow-400'><span className=' text-xl text-blue-400'><AiOutlineGoogle /></span> Join With Google</button>
                 </div>
                 <div>
                     <h3 className='text-2xl text-center font-semibold py-5'>Our Social Contacts</h3>
