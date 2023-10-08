@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { AiOutlineGoogle } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate, } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,8 +9,11 @@ const Login = () => {
     const { googleLogin, login } = useContext(AuthContext)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
-    const [error, setError] = useState('')
-
+    const [errorPassword, setErrorPassword] = useState('')
+    const [errorEmail, setErrorEmail] = useState('')
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location);
     // google login
     const handleGoogleLogin = () => {
         googleLogin()
@@ -23,22 +26,36 @@ const Login = () => {
     // password login
     const handleLogIn = (e) => {
         e.preventDefault()
-        if ((password)) {
-            setError("Password doesn't match")
-            return
-        }
+        // if ((password)) {
+        //     setError("Password doesn't match")
+        //     return
+        // }
 
         login(email, password)
             .then(res => {
-                console.log(res.user);
+                const user = res.user
+                navigate(location?.state ? location.state : '/')
             })
-            .catch(error => console.log(error.message))
+            .catch(error => {
+                // Handle Firebase error
+                const errorPassword = error.code;
+                const errorEmail = error.message;
+
+                if (errorPassword === 'auth/wrong-password') {
+                    alert('Wrong password. Please try again.');
+                } else if (errorEmail === 'auth/user-not-found') {
+                    setErrorPassword("password doesn't match");
+                    return
+                } else {
+                    setErrorEmail("email doesn't match"); // Handle other errors
+                    return
+                }
+            })
+        e.target.reset()
         toast.success("You have logged in successfully", {
             position: toast.POSITION.TOP_CENTER
         });
-        e.target.reset()
     }
-
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -93,7 +110,8 @@ const Login = () => {
                             Log in
                         </button>
                     </div>
-                    <p>{error}</p>
+                    <p>{errorPassword}</p>
+                    <p>{errorEmail}</p>
                 </form>
                 <ToastContainer />
             </div>

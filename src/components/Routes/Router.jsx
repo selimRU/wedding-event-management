@@ -6,12 +6,14 @@ import Login from "../Pages/Login";
 import Signin from "../Pages/Signin";
 import ServiceDetails from "../ServiceDetails/ServiceDetails";
 import About from "../Pages/About";
-import Orders from "../Pages/Orders";
 import PrivatRoutes from "../PrivatRoutes/PrivatRoutes";
+import Orders from "../Orders/Orders";
+import Error from "../Error/Error";
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -24,11 +26,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'about/',
-                element: <About></About>
+                element: <PrivatRoutes><About></About></PrivatRoutes>
             },
             {
                 path: 'orders/',
-                element: <Orders></Orders>
+                element: <PrivatRoutes><Orders></Orders></PrivatRoutes>
             },
             {
                 path: '/login',

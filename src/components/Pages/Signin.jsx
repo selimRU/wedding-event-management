@@ -16,7 +16,7 @@ const Signin = () => {
         e.preventDefault()
         setError('')
         // password validation
-        if (password.length > 6) {
+        if (password.length < 6) {
             setError('The password is less than 6 characters')
             return
         }

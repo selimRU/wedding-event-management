@@ -1,12 +1,34 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ServiceDetails = () => {
     const { id } = useParams()
     console.log(id);
     const services = useLoaderData()
     console.log(services);
     const newService = services.find(service => service.id == id)
+
+    const handleorder = () => {
+        let added = []
+        const storedService = localStorage.getItem('service') ? JSON.parse(localStorage.getItem('service')) : [];
+        if (!storedService) {
+            added.push(newService)
+            localStorage.setItem('service', JSON.stringify(added))
+        }
+        else {
+            const exists = storedService.find(item => item.id == id)
+            if (!exists) {
+                added.push(...storedService, newService)
+                localStorage.setItem('service', JSON.stringify(added))
+            }
+            else {
+                toast.error("You have already added", {
+                    position: toast.POSITION.TOP_CENTER
+                });
+            }
+        }
+    }
     console.log(newService);
     return (
         <div className=' max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 py-10'>
@@ -28,8 +50,11 @@ const ServiceDetails = () => {
                         <p>Duration:</p>
                         <p>{newService?.duration}</p>
                     </div>
+                    <div className=' flex justify-center'>
+                        <button onClick={handleorder} className=' bg-yellow-400 px-5 py-2 rounded-md'>Order Now</button>
+                    </div>
                 </div>
-
+                <ToastContainer></ToastContainer>
             </div>
             <div className='lg:col-span-2'>
                 {

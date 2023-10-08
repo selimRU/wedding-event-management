@@ -13,7 +13,7 @@ const ServiceCard = ({ service }) => {
             <p className='text-xl font-semibold text-black'>{title}</p>
             <p>Price:$ {price}</p>
             <p>{description.length > 100 ? description.slice(0, 100) : description}</p>
-            <div onClick={ handleDetails} className=' flex justify-center'>
+            <div onClick={handleDetails} className=' flex justify-center'>
                 <button className=' text-base bg-yellow-200 hover:bg-yellow-300 px-5 py-2 rounded-md'>Details</button>
             </div>
         </div>

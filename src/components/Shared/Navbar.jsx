@@ -47,8 +47,8 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <div className=" ml-[90px] md:ml-[70%] lg:ml-0 w-[100%] lg:w-[140%]">
-                        <div className="">
+                    <div className=" ml-[60px] md:ml-[70%] lg:ml-0 w-[100%] lg:w-[140%]">
+                        <div>
                             <img className="w-[100%] lg:w-[20%]" src={logo} alt="" />
                         </div>
                         <div className="w-[143%]">
@@ -65,7 +65,10 @@ const Navbar = () => {
                     {
                         user ?
                             <div className=" flex gap-3 items-center">
-                                <img className=" end-8 h-8 rounded-full" src={user.photoURL} alt="" />
+                                <div className=" flex flex-col md:flex-row-reverse md:gap-3 lg:flex-row-reverse items-center lg:gap-2">
+                                    <img className=" end-8 h-8 rounded-full" src={user.photoURL} alt="" />
+                                    <p className=" text-xs lg:text-sm md:text-sm">{user.displayName}</p>
+                                </div>
                                 <button onClick={logOut} className=" hover:text-white bg-yellow-400 px-5 lg:px-8 lg:py-2 py-1 rounded-md lg:rounded-2xl ">Sign Out</button>
                             </div> :
                             <div>
