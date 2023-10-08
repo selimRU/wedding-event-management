@@ -8,24 +8,40 @@ const Signin = () => {
     const [password, setPassword] = useState(null)
     const [name, setName] = useState('')
     const [photo, setPhoto] = useState('')
-    console.log(photo);
-    console.log(name);
+    const [error, setError] = useState('')
     const { createUser, profileUpdate } = useContext(AuthContext)
+
 
     const handleCreateUser = (e) => {
         e.preventDefault()
+        setError('')
+        // password validation
+        if (password.length > 6) {
+            setError('The password is less than 6 characters')
+            return
+        }
+        if (!/[A-Z]/.test(password)) {
+            setError("The password don't have a capital letter")
+            return
+        }
+        if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/.test(password)) {
+            setError("The password don't have a special character")
+            return
+        }
         toast.success("You have created user successfully", {
             position: toast.POSITION.TOP_CENTER
         });
         createUser(email, password)
             .then(res => {
-                console.log(res.user);
+                (res.user);
                 profileUpdate(name, photo)
                     .then(() => {
-                        console.log('updated');
+
                     })
+
             })
             .catch(error => console.log(error.message))
+        e.target.reset()
     }
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -49,7 +65,7 @@ const Signin = () => {
                                 type="text"
                                 placeholder="Your Name"
                                 required
-                                className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm sm:text-sm sm:leading-6 border"
+                                className="block w-full rounded-md py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6 border"
                             />
                         </div>
                     </div>
@@ -65,9 +81,10 @@ const Signin = () => {
                                 type="text"
                                 placeholder="Your Image Link"
                                 required
-                                className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm sm:text-sm sm:leading-6 border"
+                                className="block w-full rounded-md py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6 border"
                             />
                         </div>
+                        <p className=' text-sm text-red-600 mt-4'>{error}</p>
                     </div>
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -81,7 +98,7 @@ const Signin = () => {
                                 type="email"
                                 placeholder="Your Email"
                                 required
-                                className="block w-full rounded-md py-1.5 text-gray-900 shadow-sm sm:text-sm sm:leading-6 border"
+                                className="block w-full rounded-md py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6 border"
                             />
                         </div>
                     </div>
@@ -99,7 +116,7 @@ const Signin = () => {
                                 type="password"
                                 placeholder="Your Password"
                                 required
-                                className="block w-full rounded-md border py-1.5 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
+                                className="block w-full rounded-md border py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>

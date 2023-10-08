@@ -4,10 +4,12 @@ import { AiOutlineGoogle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 const Login = () => {
     const { googleLogin, login } = useContext(AuthContext)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
+    const [error, setError] = useState('')
 
     // google login
     const handleGoogleLogin = () => {
@@ -20,15 +22,21 @@ const Login = () => {
 
     // password login
     const handleLogIn = (e) => {
-        toast.success("You have logged in successfully", {
-            position: toast.POSITION.TOP_CENTER
-        });
         e.preventDefault()
+        if ((password)) {
+            setError("Password doesn't match")
+            return
+        }
+
         login(email, password)
             .then(res => {
                 console.log(res.user);
             })
             .catch(error => console.log(error.message))
+        toast.success("You have logged in successfully", {
+            position: toast.POSITION.TOP_CENTER
+        });
+        e.target.reset()
     }
 
     return (
@@ -53,7 +61,7 @@ const Login = () => {
                                 type="email"
                                 autoComplete="email"
                                 required
-                                className="block w-full rounded-md border py-1.5 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
+                                className="block w-full rounded-md border py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -72,7 +80,7 @@ const Login = () => {
                                 type="password"
                                 autoComplete="current-password"
                                 required
-                                className="block w-full rounded-md border py-1.5 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
+                                className="block w-full rounded-md border py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
                             />
                         </div>
                     </div>
@@ -85,6 +93,7 @@ const Login = () => {
                             Log in
                         </button>
                     </div>
+                    <p>{error}</p>
                 </form>
                 <ToastContainer />
             </div>
