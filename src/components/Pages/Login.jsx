@@ -9,52 +9,39 @@ const Login = () => {
     const { googleLogin, login } = useContext(AuthContext)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
-    const [errorPassword, setErrorPassword] = useState('')
-    const [errorEmail, setErrorEmail] = useState('')
+
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location);
+
     // google login
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(res => {
-                const user = res.user
-                console.log(user);
-            })
+            .then(res => res.user)
     }
 
     // password login
     const handleLogIn = (e) => {
         e.preventDefault()
-        // if ((password)) {
-        //     setError("Password doesn't match")
-        //     return
-        // }
-
         login(email, password)
-            .then(res => {
+            .then((res) => {
                 const user = res.user
-                navigate(location?.state ? location.state : '/')
-            })
-            .catch(error => {
-                // Handle Firebase error
-                const errorPassword = error.code;
-                const errorEmail = error.message;
-
-                if (errorPassword === 'auth/wrong-password') {
-                    alert('Wrong password. Please try again.');
-                } else if (errorEmail === 'auth/user-not-found') {
-                    setErrorPassword("password doesn't match");
-                    return
-                } else {
-                    setErrorEmail("email doesn't match"); // Handle other errors
-                    return
+                if (user) {
+                    navigate(location?.state ? location.state : '/')
+                    toast.success("You have logged in successfully", {
+                        position: toast.POSITION.TOP_CENTER
+                    });
+                    e.target.reset()
                 }
             })
-        e.target.reset()
-        toast.success("You have logged in successfully", {
-            position: toast.POSITION.TOP_CENTER
-        });
+            .catch(error => {
+                const errorMessage = error.message;
+                if (errorMessage) {
+                    toast.error(errorMessage, {
+                        position: toast.POSITION.TOP_CENTER
+                    });
+                }
+            })
+        return
     }
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -63,7 +50,6 @@ const Login = () => {
                     Log in to your account
                 </h2>
             </div>
-
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form onSubmit={handleLogIn} className="space-y-6" >
                     <div>
@@ -82,7 +68,6 @@ const Login = () => {
                             />
                         </div>
                     </div>
-
                     <div>
                         <div className="flex items-center justify-between">
                             <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
@@ -101,7 +86,6 @@ const Login = () => {
                             />
                         </div>
                     </div>
-
                     <div>
                         <button
                             type="submit"
@@ -110,8 +94,6 @@ const Login = () => {
                             Log in
                         </button>
                     </div>
-                    <p>{errorPassword}</p>
-                    <p>{errorEmail}</p>
                 </form>
                 <ToastContainer />
             </div>

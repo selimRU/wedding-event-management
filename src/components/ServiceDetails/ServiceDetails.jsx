@@ -4,12 +4,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const ServiceDetails = () => {
     const { id } = useParams()
-    console.log(id);
     const services = useLoaderData()
-    console.log(services);
     const newService = services.find(service => service.id == id)
 
-    const handleorder = () => {
+    const handleOrder = () => {
         let added = []
         const storedService = localStorage.getItem('service') ? JSON.parse(localStorage.getItem('service')) : [];
         if (!storedService) {
@@ -29,7 +27,6 @@ const ServiceDetails = () => {
             }
         }
     }
-    console.log(newService);
     return (
         <div className=' max-w-6xl mx-auto grid lg:grid-cols-3 gap-10 py-10'>
             <div className=' '>
@@ -51,7 +48,7 @@ const ServiceDetails = () => {
                         <p>{newService?.duration}</p>
                     </div>
                     <div className=' flex justify-center'>
-                        <button onClick={handleorder} className=' bg-yellow-400 px-5 py-2 rounded-md'>Order Now</button>
+                        <button onClick={handleOrder} className=' bg-yellow-400 px-5 py-2 rounded-md'>Order Now</button>
                     </div>
                 </div>
                 <ToastContainer></ToastContainer>

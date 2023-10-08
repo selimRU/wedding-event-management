@@ -28,20 +28,18 @@ const Signin = () => {
             setError("The password don't have a special character")
             return
         }
-        toast.success("You have created user successfully", {
-            position: toast.POSITION.TOP_CENTER
-        });
         createUser(email, password)
             .then(res => {
                 (res.user);
                 profileUpdate(name, photo)
                     .then(() => {
-
+                        toast.success("You have created user successfully", {
+                            position: toast.POSITION.TOP_CENTER
+                        });
                     })
-
+                e.target.reset()
             })
-            .catch(error => console.log(error.message))
-        e.target.reset()
+            .catch(error => error.message)
     }
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
