@@ -9,8 +9,8 @@ const ServiceCard = ({ service }) => {
     }
     return (
         <div className='shadow-md p-5 space-y-3'>
-            <img className='w-full rounded-md' src={image} alt="" />
-            <p className=' text-xl font-semibold text-black'>{title}</p>
+            <img className='w-full rounded-md transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105' src={image} alt="" />
+            <p className='text-xl font-semibold text-black'>{title}</p>
             <p>Price:$ {price}</p>
             <p>{description.length > 100 ? description.slice(0, 100) : description}</p>
             <div onClick={ handleDetails} className=' flex justify-center'>

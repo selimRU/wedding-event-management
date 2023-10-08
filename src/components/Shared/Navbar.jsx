@@ -63,8 +63,15 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <button onClick={logOut} className=" hover:text-white bg-yellow-400 px-5 lg:px-8 py-2 rounded-md lg:rounded-2xl ">Sign Out</button> :
-                            <Link to='/login'><button className="hover:text-white bg-yellow-400 px-5 lg:px-8 py-2 rounded-md lg:rounded-2xl">Log In</button></Link>
+                        user ?
+                            <div className=" flex gap-3 items-center">
+                                <img className=" end-8 h-8 rounded-full" src={user.photoURL} alt="" />
+                                <button onClick={logOut} className=" hover:text-white bg-yellow-400 px-5 lg:px-8 lg:py-2 py-1 rounded-md lg:rounded-2xl ">Sign Out</button>
+                            </div> :
+                            <div>
+
+                                <Link to='/login'><button className="hover:text-white bg-yellow-400 px-5 lg:px-8 lg:py-2 py-1 rounded-md lg:rounded-2xl font-bold">Log In</button></Link>
+                            </div>
                     }
 
 
