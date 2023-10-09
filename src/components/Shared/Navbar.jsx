@@ -13,13 +13,16 @@ const Navbar = () => {
             }
         >Home
         </NavLink></li>
-        <li><NavLink
-            to='about'
-            className={({ isActive }) =>
-                isActive ? " underline" : "hover:text-yellow-400"
-            }
-        >About
-        </NavLink></li>
+        {
+            user &&
+            <li><NavLink
+                to='about'
+                className={({ isActive }) =>
+                    isActive ? " underline" : "hover:text-yellow-400"
+                }
+            >About
+            </NavLink></li>
+        }
         <li><NavLink
             to='/contact'
             className={({ isActive }) =>
@@ -27,13 +30,16 @@ const Navbar = () => {
             }
         >Contact
         </NavLink></li>
-        <li><NavLink
-            to='/orders'
-            className={({ isActive }) =>
-                isActive ? "underline" : "hover:text-yellow-400"
-            }
-        >Orders
-        </NavLink></li>
+        {
+            user &&
+            <li><NavLink
+                to='/orders'
+                className={({ isActive }) =>
+                    isActive ? "underline" : "hover:text-yellow-400"
+                }
+            >Orders
+            </NavLink></li>
+        }
     </div>
     return (
         <div className=" sticky top-0 z-50 bg-white hover:bg-yellow-50">

@@ -11,7 +11,7 @@ const Home = () => {
         duration: 2000,
         offset: 200,
         easing: 'ease-in-out',
-      });
+    });
     const services = useLoaderData()
     return (
         <div data-aos="fade-up">

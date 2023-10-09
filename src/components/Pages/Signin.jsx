@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 const Signin = () => {
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
@@ -15,6 +14,7 @@ const Signin = () => {
     const handleCreateUser = (e) => {
         e.preventDefault()
         setError('')
+
         // password validation
         if (password.length < 6) {
             setError('The password is less than 6 characters')
@@ -36,7 +36,9 @@ const Signin = () => {
                         toast.success("You have created user successfully", {
                             position: toast.POSITION.TOP_CENTER
                         });
+
                     })
+                // window.location.reload()
                 e.target.reset()
             })
             .catch(error => error.message)
@@ -127,7 +129,6 @@ const Signin = () => {
                         </button>
                     </div>
                 </form>
-                <ToastContainer />
             </div>
             <p className=' text-center  pt-5'>Already have an account? please<Link to='/login'><span className='text-blue-600 underline ml-3'>LogIn</span></Link></p>
         </div>

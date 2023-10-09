@@ -3,7 +3,6 @@ import OrderCard from './OrderCard';
 
 const Orders = () => {
     const [serviceOrdered, setServiceOrdered] = useState([])
-    console.log(serviceOrdered);
 
     useEffect(() => {
         const services = JSON.parse(localStorage.getItem('service'))

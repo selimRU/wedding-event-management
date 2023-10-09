@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { AiOutlineGoogle } from 'react-icons/ai';
 import { Link, useLocation, useNavigate, } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 
 const Login = () => {
     const { googleLogin, login } = useContext(AuthContext)
@@ -91,7 +91,6 @@ const Login = () => {
                         </button>
                     </div>
                 </form>
-                <ToastContainer />
             </div>
             <div className=' flex justify-center py-5'>
                 <button onClick={handleGoogleLogin} className=' btn btn-outline text-center hover:bg-yellow-400'><span className=' text-xl text-blue-400'><AiOutlineGoogle /></span> Join With Google</button>
