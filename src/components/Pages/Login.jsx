@@ -25,23 +25,19 @@ const Login = () => {
         login(email, password)
             .then((res) => {
                 const user = res.user
-                if (user) {
-                    navigate(location?.state ? location.state : '/')
-                    toast.success("You have logged in successfully", {
-                        position: toast.POSITION.TOP_CENTER
-                    });
-                    e.target.reset()
-                }
+                toast.success("You have logged in successfully", {
+                    position: toast.POSITION.TOP_CENTER
+                });
+                navigate(location?.state ? location.state : '/')
+                e.target.reset()
+
             })
             .catch(error => {
                 const errorMessage = error.message;
-                if (errorMessage) {
-                    toast.error(errorMessage, {
-                        position: toast.POSITION.TOP_CENTER
-                    });
-                }
+                toast.error(errorMessage, {
+                    position: toast.POSITION.TOP_CENTER
+                });
             })
-        return
     }
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">

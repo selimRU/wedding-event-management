@@ -10,7 +10,7 @@ import sl3 from '../../assets/images/sl/sl3.png'
 
 const Slider = () => {
     return (
-        <div className=' relative'>
+        <div>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={5}
@@ -20,14 +20,25 @@ const Slider = () => {
                 scrollbar={{ draggable: true }}
             >
                 <SwiperSlide>
-                    <img width={'100%'} src={sl2} alt="" />
+                    <div className=' relative'>
+                        <img width={'100%'} src={sl2} alt="" />
+                        <div className=' bg-black h-full w-full bottom-0 absolute opacity-30'></div>
+                        <p className=' text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Celebrate as you like...</p>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img width={'100%'} src={sl1} alt="" />
+                    <div className=' relative'>
+                        <img width={'100%'} src={sl1} alt="" />
+                        <div className=' bg-black h-full w-full bottom-0 absolute opacity-30'></div>
+                        <p className=' text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Enjoy your life...</p>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img width={'100%'} src={sl3} alt="" />
-                    <p className=' text-4xl text-red-600 absolute bottom-[25%]'>fff</p>
+                    <div className=' relative'>
+                        <img width={'100%'} src={sl3} alt="" />
+                        <div className=' bg-black h-full w-full bottom-0 absolute opacity-30'></div>
+                        <p className=' text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Happyness forever...</p>
+                    </div>
                 </SwiperSlide>
             </Swiper>
         </div>

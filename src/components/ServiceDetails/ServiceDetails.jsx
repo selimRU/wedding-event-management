@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import swal from 'sweetalert';
 const ServiceDetails = () => {
     const { id } = useParams()
     const services = useLoaderData()
@@ -18,6 +19,7 @@ const ServiceDetails = () => {
             const exists = storedService.find(item => item.id == id)
             if (!exists) {
                 added.push(...storedService, newService)
+                swal("Good job!", "You have ordered successfully", "success");
                 localStorage.setItem('service', JSON.stringify(added))
             }
             else {
@@ -25,6 +27,7 @@ const ServiceDetails = () => {
                     position: toast.POSITION.TOP_CENTER
                 });
             }
+            return
         }
     }
     return (
