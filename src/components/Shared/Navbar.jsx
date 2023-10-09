@@ -72,18 +72,15 @@ const Navbar = () => {
                         user ?
                             <div className=" flex gap-3 items-center">
                                 <div className=" flex flex-col md:flex-row-reverse md:gap-3 lg:flex-row-reverse items-center lg:gap-2">
-                                    <img className=" end-8 h-8 rounded-full" src={user.photoURL} alt="" />
+                                    <img className=" end-6 h-6 rounded-full" src={user.photoURL} alt="" />
                                     <p className=" text-xs lg:text-sm md:text-sm">{user.displayName}</p>
                                 </div>
-                                <button onClick={logOut} className=" hover:text-white bg-yellow-400 px-5 lg:px-8 lg:py-2 py-1 rounded-md lg:rounded-2xl ">Sign Out</button>
+                                <button onClick={logOut} className=" text-xs md:text-sm lg:text-sm hover:text-white bg-yellow-400 px-3 lg:px-8 lg:py-2 py-1 rounded-md lg:rounded-2xl ">Sign Out</button>
                             </div> :
                             <div>
-
-                                <Link to='/login'><button className="hover:text-white bg-yellow-400 px-5 lg:px-8 lg:py-2 py-1 rounded-md lg:rounded-2xl font-bold">Log In</button></Link>
+                                <Link to='/login'><button className="hover:text-white bg-yellow-400 px-3 lg:px-8 lg:py-2 py-1 rounded-md text-xs md:text-sm lg:text-sm lg:rounded-2xl font-bold">Log In</button></Link>
                             </div>
                     }
-
-
                 </div>
             </div>
         </div>
