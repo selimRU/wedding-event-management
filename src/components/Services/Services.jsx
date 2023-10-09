@@ -26,12 +26,12 @@ const Services = ({ services }) => {
             <div className=' w-full lg:w-[35%]'>
                 <h3 className='text-2xl lg:text-3xl text-center lg:text-start text-black font-semibold'>Login With</h3>
                 <div className=' flex justify-center lg:justify-start py-5'>
-                    <button onClick={handleGoogleLogin} className=' btn btn-outline text-center hover:bg-yellow-400'><span className=' text-xl text-blue-400'><AiOutlineGoogle /></span> Join With Google</button>
+                    <button onClick={handleGoogleLogin} className=' btn btn-outline text-center hover:bg-yellow-400'><span className=' text-xl text-blue-400'><AiOutlineGoogle /></span>Join With Google</button>
                 </div>
                 <div>
                     <h3 className=' text-2xl lg:text-2xl text-center lg:text-start font-semibold py-5'>Our Social Contacts</h3>
                     <div className=' w-[50%] lg:w-full mx-auto text-center px-5 space-y-5'>
-                        <div className=' flex justify-center lg:justify-start items-center border w-[90%] md:w-[96%] gap-4'>
+                        <div className=' flex justify-center lg:justify-start items-center w-[90%] md:w-[96%] gap-4'>
                             <span className=' text-2xl text-blue-500'><BiLogoFacebook /></span>
                             <a href="https://www.google.com/search?q=facebook&oq=face&gs_lcrp=EgZjaHJvbWUqEAgAEAAYgwEY4wIYsQMYgAQyEAgAEAAYgwEY4wIYsQMYgAQyEwgBEC4YgwEYxwEYsQMY0QMYgAQyDwgCEEUYORiDARixAxiABDINCAMQABiDARixAxiABDINCAQQABiDARixAxiABDINCAUQABiDARixAxiABDINCAYQABiDARixAxiABDIKCAcQABixAxiABDINCAgQABiDARixAxiABDIHCAkQABiPAtIBCTU2MTNqMGoxNagCALACAA&sourceid=chrome&ie=UTF-8"><h3 className='text-xl'>Faccbook</h3></a>
                         </div>

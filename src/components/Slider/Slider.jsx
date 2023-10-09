@@ -22,21 +22,21 @@ const Slider = () => {
                     <div className=' relative'>
                         <img width={'100%'} src={sl2} alt="" />
                         <div className=' bg-black h-full w-full bottom-0 absolute opacity-30'></div>
-                        <p className=' text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Celebrate as you like...</p>
+                        <p className='text-xl md:text-3xl lg:text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Celebrate as you like...</p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=' relative'>
                         <img width={'100%'} src={sl1} alt="" />
                         <div className=' bg-black h-full w-full bottom-0 absolute opacity-30'></div>
-                        <p className=' text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Enjoy your life...</p>
+                        <p className=' text-xl md:text-3xl lg:text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Enjoy your life...</p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className=' relative'>
                         <img width={'100%'} src={sl3} alt="" />
                         <div className=' bg-black h-full w-full bottom-0 absolute opacity-30'></div>
-                        <p className=' text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Happyness forever...</p>
+                        <p className='text-xl md:text-3xl lg:text-6xl absolute bottom-[20%] left-5 text-white italic font-bold'>Happyness forever...</p>
                     </div>
                 </SwiperSlide>
             </Swiper>
