@@ -84,7 +84,6 @@ const Signin = () => {
                                 className="block w-full rounded-md py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6 border"
                             />
                         </div>
-                        <p className=' text-sm text-red-600 mt-4'>{error}</p>
                     </div>
                     <div>
                         <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -119,6 +118,7 @@ const Signin = () => {
                                 className="block w-full rounded-md border py-1.5 pl-3 text-gray-900 shadow-sm sm:text-sm sm:leading-6"
                             />
                         </div>
+                        <p className=' text-sm text-red-600 mt-4'>{error}</p>
                     </div>
                     <div>
                         <button
